@@ -39,14 +39,14 @@ public:
         std::cout << " ~ constructor ." << std::endl;
 
     }
-    Mshared_ptr(Mshared_ptr<T>& obj):_ptr(obj->_ptr), _count_ptr(obj->_count_ptr){
+    Mshared_ptr(Mshared_ptr<T>& obj):_ptr(obj._ptr), _count_ptr(obj._count_ptr){
         _count_ptr->add_count();
         std::cout << " copy constructor ." << std::endl;
 
     }
-    Mshared_ptr(Mshared_ptr<T>&& obj):_ptr(obj->_ptr), _count_ptr(obj->_count_ptr){
-        obj->_ptr=nullptr;
-        obj->_count_ptr=nullptr;
+    Mshared_ptr(Mshared_ptr<T>&& obj):_ptr(obj._ptr), _count_ptr(obj._count_ptr){
+        obj._ptr=nullptr;
+        obj._count_ptr=nullptr;
         std::cout << " move constructor ." << std::endl;
 
     }
@@ -57,9 +57,9 @@ public:
             delete _ptr;
             delete _count_ptr;
         }
-        if(obj->_ptr){
-            _ptr = obj->_ptr;
-            _count_ptr = obj->_count_ptr;
+        if(obj._ptr){
+            _ptr = obj._ptr;
+            _count_ptr = obj._count_ptr;
             _count_ptr->add_count();
         }
         std::cout << " copy = constructor ." << std::endl;
@@ -71,22 +71,22 @@ public:
             delete _ptr;
             delete _count_ptr;
         }
-        if(obj->_ptr){
-            _ptr = obj->_ptr;
-            _count_ptr = obj->_count_ptr;
-            obj->_ptr = nullptr;
-            obj->_count_ptr = nullptr;
+        if(obj._ptr){
+            _ptr = obj._ptr;
+            _count_ptr = obj._count_ptr;
+            obj._ptr = nullptr;
+            obj._count_ptr = nullptr;
         }
         std::cout << " move = constructor ." << std::endl;
 
         return *this;
 
     }
-    Mshared_ptr* operator ->(){
-        return this;
+    T* operator ->(){
+        return _ptr;
     }
-    Mshared_ptr& operator *(){
-        return *this;
+    T& operator *(){
+        return *_ptr;
     }
     T* get(){
         return _ptr;
@@ -102,8 +102,8 @@ public:
         return 0;
     }
     void swap(Mshared_ptr<T>& obj){
-        swap(_ptr, obj->_ptr);
-        swap(_count_ptr, obj->_count_ptr);
+        swap(_ptr, obj._ptr);
+        swap(_count_ptr, obj._count_ptr);
     }
     void reset(T* ptr=nullptr){
         if(_ptr){

@@ -130,28 +130,28 @@ int main(){
     {
         // 拷贝构造
         Mshared_ptr<int> test2 = test;
-        std::cout << test2->use_count() << std::endl;
+        std::cout << test2.use_count() << std::endl;
     }
     {
         // 移动构造
         Mshared_ptr<int> test2 = std::move(test);
-        std::cout << test2->use_count() << std::endl;
+        std::cout << test2.use_count() << std::endl;
     }
-    test->reset(new int(1));
+    test.reset(new int(1));
     {
         // 拷贝操作符
         Mshared_ptr<int> test3(new int(2));
         Mshared_ptr<int> test2 = test3;
-        std::cout <<" before 拷贝操作符:test3.count:"<< test3->use_count() << std::endl;
+        std::cout <<" before 拷贝操作符:test3.count:"<< test3.use_count() << std::endl;
 
         test2 = test;
-        std::cout <<" after 拷贝操作符:test3.count:"<< test3->use_count() << std::endl;
+        std::cout <<" after 拷贝操作符:test3.count:"<< test3.use_count() << std::endl;
     }
     {
         // 移动操作符
         Mshared_ptr<int> test3(new int(2));
         test3 = std::move(test);
-        std::cout <<" after 拷贝操作符:test3.val:"<< *test3->get() << std::endl;
+        std::cout <<" after 拷贝操作符:test3.val:"<< *test3.get() << std::endl;
     }
-    std::cout << test->use_count() << std::endl;
+    std::cout << test.use_count() << std::endl;
 }

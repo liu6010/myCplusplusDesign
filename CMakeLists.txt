@@ -20,15 +20,40 @@ if(NOT CMAKE_BUILD_TYPE)
     # set(CMAKE_BUILD_TYPE "Release")
     set(CMAKE_BUILD_TYPE "Debug")
 endif()
-message("BUILD TYPE:" ${CMAKE_BUILD_TYPE})
+message(STATUS "BUILD TYPE:" ${CMAKE_BUILD_TYPE})
 
 include_directories(${PROJECT_SOURCE_DIR})
+
+
+
+option(ENABLE_MyDesign "Enable MyDesign subdirectory" TRUE)
+option(ENABLE_algorithm "Enable algorithm subdirectory" TRUE)
+option(ENABLE_thread "Enable thread subdirectory" TRUE)
+option(ENABLE_DesignModel "Enable DesignModel subdirectory" TRUE)
 
 # enable_testing()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-add_subdirectory(MyDesign)
-add_subdirectory(algorithm)
-add_subdirectory(thread)
-add_subdirectory(DesignModel)
+
+if(ENABLE_MyDesign)
+    message(STATUS "Enable MyDesign Module")
+    add_subdirectory(MyDesign)
+endif()
+
+if(ENABLE_algorithm)
+    message(STATUS "Enable algorithm Module")
+    add_subdirectory(algorithm)
+endif()
+
+if(ENABLE_thread)
+    message(STATUS "Enable thread Module")
+    add_subdirectory(thread)
+
+endif()
+
+if(ENABLE_DesignModel)
+    message(STATUS "Enable DesignModel Module")
+    add_subdirectory(DesignModel)
+endif()
+
 

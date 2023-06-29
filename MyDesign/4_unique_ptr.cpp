@@ -1,3 +1,12 @@
+/*** 
+ * @Descripttion: 
+ * @version: 
+ * @Author: lhw
+ * @Date: 2023-06-29 19:39:21
+ * @FilePath: /myCplusplusDesign/MyDesign/4_unique_ptr.cpp
+ * @LastEditors: lhw
+ * @LastEditTime: 2023-06-29 20:03:45
+ */
 #include <iostream>
 #include <atomic>
 #include <mutex>

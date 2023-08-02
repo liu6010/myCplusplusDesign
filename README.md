@@ -10,6 +10,9 @@ make -j
 - `algorithm`：一些算法
   - `lru`：LeetCode的LRU算法
   - `sort`：十大排序
+  - `InterviewQuestion`：面试中遇到的一些算法题
+     1. 判断大小端
+     2. 两个数取较大值，不能用if、< 等判断条件，[面试题 16.07. 最大数值](https://leetcode.cn/problems/maximum-lcci/description/)
 - `MyDesign`:手撕的一些STL或C++11新特性
   - `1_MyAllocate`：手动实现的allocate分配器
   - `2_MySharedPtr`：手动实现的shared_ptr

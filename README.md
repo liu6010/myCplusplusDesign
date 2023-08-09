@@ -13,6 +13,7 @@ make -j
   - `InterviewQuestion`：面试中遇到的一些算法题
      1. 判断大小端
      2. 两个数取较大值，不能用if、< 等判断条件，[面试题 16.07. 最大数值](https://leetcode.cn/problems/maximum-lcci/description/)
+     3. 实现双向链表+翻转双向链表
   - `Trie`：前缀树
 - `DesignModel`：一些设计模式
   - `工厂模式`

@@ -35,10 +35,10 @@ void testSimp(){
     using alloc = myAllocSimp<int>;
     size_t size = 5;
     int* arr = alloc::allocate(size);
-    for(int i=0; i<size; i++){
+    for(size_t i=0; i<size; i++){
         arr[i] = i;
     }
-    for(int i=0; i<size; i++){
+    for(size_t i=0; i<size; i++){
         std::cout <<arr[i] << " ";
     }
     alloc::deallocate(arr);

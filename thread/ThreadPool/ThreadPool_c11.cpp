@@ -85,12 +85,13 @@ private:
         }
 
     }
-
+private:
     int _thread_num;
     vector<std::thread> _thread_pool;
     queue<std::function<void()>> _task_pool;
-    atomic<int> _running_task_num;
     atomic<bool> _is_running;
+    atomic<int> _running_task_num;
+
     std::condition_variable _running_cv;
     std::condition_variable _finished_cv;
     std::mutex _task_mtx;

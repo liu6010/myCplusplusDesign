@@ -3,7 +3,7 @@
 using namespace std;
 
 void InsertSort(vector<int>& nums, int gap){
-    for(int i=gap;i<nums.size();i++){
+    for(size_t i=gap;i<nums.size();i++){
         int temp = nums[i];
         int j = i-gap;
         while(j>=0 && temp < nums[j]){

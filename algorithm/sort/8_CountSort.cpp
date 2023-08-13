@@ -20,11 +20,11 @@ void CountSort(vector<int>& nums){
     for(auto& n:nums){
         vecCount[n]++;
     }
-    for(int i=1;i<vecCount.size();i++){
+    for(size_t i=1;i<vecCount.size();i++){
         vecCount[i] += vecCount[i-1];
     }
     // 将当前元素从计数数组中取出来
-    for(int i=nums.size(); i>0;i--){
+    for(size_t i=nums.size(); i>0;i--){
         obj[--vecCount[nums[i-1]]] = nums[i-1];
     }
 

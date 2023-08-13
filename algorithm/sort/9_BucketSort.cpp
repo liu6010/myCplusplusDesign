@@ -14,7 +14,7 @@ using namespace std;
 const int BUCKET_NUM = 10;
 
 void InsertSort(vector<int>& nums){
-    for(int i=1;i<nums.size();i++){
+    for(size_t i=1;i<nums.size();i++){
         int temp = nums[i];
         int j=i-1;
         while(j>=0 && temp < nums[j]){
@@ -33,20 +33,20 @@ void BucketSort(vector<int>& nums){
     int buket_size = (maxVal-minVal) / BUCKET_NUM + 1;      // 每个桶的容量
     vector<vector<int>> buckets(BUCKET_NUM);
 
-    for(int i=0; i< nums.size();i++){
+    for(size_t i=0; i< nums.size();i++){
         int index = (nums[i] - minVal) / buket_size; 
         buckets[index].emplace_back(nums[i]);
     }
-    for(int i=0, k=0; i< buckets.size();i++){
+    for(size_t i=0, k=0; i< buckets.size();i++){
         InsertSort(buckets[i]);
-        for(int j=0; j< buckets[i].size();j++){
+        for(size_t j=0; j< buckets[i].size();j++){
             nums[k++] = buckets[i][j];
         }
     }
 }
 
 bool valid(vector<int>& nums){
-    for(int i=1; i< nums.size();i++){
+    for(size_t i=1; i< nums.size();i++){
         if(nums[i] < nums[i-1]) return false;
     }
     return true;
@@ -59,7 +59,7 @@ void test(){
     while(testCnt--){
         srand(time(nullptr));
         vector<int> nums(rand()%1000);
-        for(int i=0;i<nums.size();i++){
+        for(size_t i=0;i<nums.size();i++){
             nums[i] = rand()%200 - 100;
         }
         BucketSort(nums);

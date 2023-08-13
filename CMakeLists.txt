@@ -19,6 +19,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 if(NOT CMAKE_BUILD_TYPE)
     # set(CMAKE_BUILD_TYPE "Release")
     set(CMAKE_BUILD_TYPE "Debug")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+    # add_definitions(-fsanitize=address)
+    # add_definitions(-fno-omit-frame-pointer)
+    
 endif()
 message(STATUS "BUILD TYPE:" ${CMAKE_BUILD_TYPE})
 

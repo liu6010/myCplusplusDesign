@@ -6,9 +6,9 @@
  * @version: 
  * @Author: lhw
  * @Date: 2023-04-13 10:16:38
- * @FilePath: /algorithm/sort/bubbleSort.cpp
+ * @FilePath: /myCplusplusDesign/algorithm/sort/1_bubbleSort.cpp
  * @LastEditors: lhw
- * @LastEditTime: 2023-05-09 16:51:38
+ * @LastEditTime: 2023-08-13 13:33:14
  */
 #include<iostream>
 #include <vector>
@@ -46,7 +46,7 @@ void bubblesort(vector<int>& nums){
 
 // print array
 void printArray(vector<int>& nums ) {
-  for (int i = 0; i < nums.size(); ++i) {
+  for (size_t i = 0; i < nums.size(); ++i) {
     cout << "  " << nums[i];
   }
   cout << "\n";

@@ -11,9 +11,9 @@ using namespace std;
 
 void SelectSort(vector<int>& nums){
     int minIdx = 0;
-    for(int i=0;i<nums.size();i++){
+    for(size_t i=0;i<nums.size();i++){
         minIdx = i;
-        for(int j=i+1;j<nums.size();++j){
+        for(size_t j=i+1;j<nums.size();++j){
             if(nums[j] < nums[minIdx]) minIdx = j;
         }
         swap(nums[i], nums[minIdx]);
@@ -23,7 +23,7 @@ void SelectSort(vector<int>& nums){
 int main(){
     srand(time(nullptr));
     vector<int> nums;
-    for(int i=0;i<10;i++){
+    for(size_t i=0;i<10;i++){
         nums.emplace_back(rand()%100);
     }
     for(auto& n:nums){

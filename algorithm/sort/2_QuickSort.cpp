@@ -6,9 +6,9 @@
  * @version: 
  * @Author: lhw
  * @Date: 2023-04-13 09:36:37
- * @FilePath: /CodeDemo/C++/algorithm/sort/QuickSort.cpp
+ * @FilePath: /myCplusplusDesign/algorithm/sort/2_QuickSort.cpp
  * @LastEditors: lhw
- * @LastEditTime: 2023-06-02 19:35:43
+ * @LastEditTime: 2023-08-13 13:36:15
  */
 
 #include <iostream>
@@ -68,7 +68,7 @@ int main(){
     }
     QuickSortThreeOfMedian(nums, 0, nums.size()-1);
 
-    for(int i=0; i< nums.size();i++){
+    for(size_t i=0; i< nums.size();i++){
         cout << nums[i] <<" ";
     }
     cout <<endl;

@@ -30,7 +30,7 @@ public:
        //  end
         {
             std::unique_lock<mutex> lock(__mtx_que);
-            __cv_prod.wait(lock, [this](){ return !(__que.size() >= __capacity);});
+            __cv_prod.wait(lock, [this](){ return !(__que.size() >= (uint64_t)__capacity);});
             __que.push(item);
         }
         __cv_cons.notify_one();

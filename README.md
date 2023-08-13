@@ -19,6 +19,7 @@ make -j
   - `工厂模式`
   - `生产消费者模式`
   - `单例模式`
+  - `observer_pattern`：观察者模式：原生指针和weak_ptr两个版本
 - `MyDesign`:手撕的一些STL或C++11新特性
   - `1_MyAllocate`：手动实现的allocate分配器
   - `2_MySharedPtr`：手动实现的shared_ptr

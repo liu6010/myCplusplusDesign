@@ -29,6 +29,15 @@ using namespace std;
 
 */
 
+
+// print array
+void printArray(vector<int>& nums ) {
+  for (size_t i = 0; i < nums.size(); ++i) {
+    cout << "  " << nums[i];
+  }
+  cout << "\n";
+}
+
 // n个长度数组长度要排n-1次
 void bubblesort(vector<int>& nums){
     int n = nums.size();
@@ -44,20 +53,9 @@ void bubblesort(vector<int>& nums){
     }
 }
 
-// print array
-void printArray(vector<int>& nums ) {
-  for (size_t i = 0; i < nums.size(); ++i) {
-    cout << "  " << nums[i];
-  }
-  cout << "\n";
-}
 
 int main(){
-
     vector<int> nums = {-2, 45, 0, 11, -9};
     bubblesort(nums);
     printArray(nums);
-    
-
-
 }

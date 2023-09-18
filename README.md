@@ -8,6 +8,10 @@ make -j
 ```
 
 - `algorithm`：一些算法
+  - `graph`：图
+     - `1_1_MinSpanTree_Prim`：最小生成树的`prim`算法
+     - `1_2_MinSpanTree_Kruskal`：最小生成树的`Kruskal`算法
+     - `2_1_MinPath_Dijkstra`：无向图/有向图的`Dijkstra`算法
   - `lru`：LeetCode的LRU算法
   - `sort`：十大排序
   - `InterviewQuestion`：面试中遇到的一些算法题

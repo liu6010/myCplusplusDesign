@@ -44,7 +44,7 @@ int dijkstra(const vector<vector<pair<int, int>>>& graph, const int start){
         }
     }
     // 输出最短路径
-    for (int i = 0; i < n; ++i) {
+    for (size_t i = 0; i < n; ++i) {
         cout << "Shortest distance from " << start << " to " << i << " is " << distance[i] << endl;
     }
     int ans = *max_element(distance.begin(), distance.end());

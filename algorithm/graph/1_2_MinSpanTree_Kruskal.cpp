@@ -37,7 +37,7 @@ int kruskal(vector<Edge>& edges, int n, vector<Edge>& MST){
     // 枚举每一条边，满足要求就加入集合中
     int res=0, cnt=0;
     MST.clear();
-    for(int i=0;i<edges.size();++i){
+    for(size_t i=0;i<edges.size();++i){
         int u = edges[i].u, v = edges[i].v, w = edges[i].w;
         // 查找u和v的父节点，如果其父节点相同则说明两节点已经连通，则直接舍弃该边
         u = findFather(father, u);
@@ -65,7 +65,7 @@ int main()
     //     cin>>a>>b>>w;
     //     edges[i] = { a,b,w };
     // }
-    int n=5, m=7;
+    int n=5;
 	vector<Edge> edges{
         {1,2,3},
         {1,3,2},
